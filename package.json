@@ -7,7 +7,7 @@
     "build": "npm run less && webpack -w",
     "prestart": "next build",
     "start": "next start -p ${PORT}",
-    "postinstall": "heroku-nextjs-build",
+    "postinstall": "npm run build",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js"
