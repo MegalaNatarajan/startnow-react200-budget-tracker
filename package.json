@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "build": "npm run less && webpack -w",
-    "start": "node server/index.js",
+    "prestart": "next build",
+    "start": "next start -p ${PORT}",
     "postinstall": "heroku-nextjs-build",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
