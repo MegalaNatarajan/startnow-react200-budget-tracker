@@ -4,7 +4,7 @@
   "description": "React/Redux Budget Tracker",
   "main": "server/index.js",
   "scripts": {
-    "build": "npm run less && webpack -w",
+    "build": "npm run less && webpack",
     "prestart": "next build",
     "start": "node server/index.js",
     "postinstall": "npm run build",
