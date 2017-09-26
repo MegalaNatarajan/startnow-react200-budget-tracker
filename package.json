@@ -6,9 +6,8 @@
   "scripts": {
     "build": "npm run less && webpack -w",
     "start": "node server/index.js",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-    "heroku-postbuild": "echo This runs afterwards.",
-    "postinstall": "npm run build",
+    
+    "postinstall": "npm run build && npm run rejoice",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js"
