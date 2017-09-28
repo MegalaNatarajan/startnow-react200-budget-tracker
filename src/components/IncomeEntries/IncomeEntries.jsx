@@ -42,6 +42,8 @@ export default class IncomeEntries extends React.Component {
                 type='text'
                 className='form-control'
                 id='income-description'
+                value={ description }
+                onChange={ this.handleDescriptionInput }
               />
             </div>
             <div className='form-group'>
@@ -52,12 +54,15 @@ export default class IncomeEntries extends React.Component {
                   type='text'
                   className='form-control'
                   id='income-amount'
+                  value={ amount }
+                  onChange={ this.handleAmountInput }
                 />
               </div>
             </div>
             <button
               type='button'
               className='btn btn-danger col-12 mb-5'
+              onClick={ this.handleAddIncome }
             >+ Add Income
             </button>
             <table className='table table-sm table-hover'>
@@ -68,11 +73,15 @@ export default class IncomeEntries extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Rent</td>
-                  <td>$1,500.00</td>
-                </tr>
-              </tbody>
+              {
+                lineItems.map(lineItem => (
+                  <tr>
+                    <td>{ lineItem.description }</td>
+                    <td>${ lineItem.amount.toFixed(2) }</td>
+                  </tr>
+                ))
+              }
+            </tbody>
             </table>
           </form>
         </div>
